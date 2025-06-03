@@ -17,13 +17,9 @@ class Solution:
             return res
         
         curr, temp, res = None, None, None
-        
-        if list1.val <= list2.val:
-            curr = list1
-            temp = list2
-        else:
-            curr = list2
-            temp = list1
+       
+        curr, temp = (list1, list2) if list1.val <= list2.val else (list2, list1)
+    
         res = curr
         while curr.next and temp:
             if curr.next.val <= temp.val:
