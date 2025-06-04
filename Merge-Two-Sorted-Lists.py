@@ -9,12 +9,9 @@ class Solution:
         # two nodes are of equal value
         # both lists are empty
         res = None
-        if not list1:
-            res = list2
-            return res
-        if not list2:
-            res = list1
-            return res
+       
+        if not list1 or not list2:
+            return list2 if not list1 else list1
         
         curr, temp, res = None, None, None
        
